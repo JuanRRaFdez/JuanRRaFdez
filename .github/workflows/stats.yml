@@ -13,20 +13,20 @@ jobs:
       - name: Generate Stats
         uses: stats-organization/github-readme-stats-action@main
         with:
-          username: JuanRRaFdez
-          template: default
-          output_path: stats.svg
+          card: stats
+          path: stats.svg
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Generate Streak
         uses: stats-organization/github-readme-stats-action@main
         with:
-          username: JuanRRaFdez
-          template: streak
-          output_path: streak.svg
+          card: streak
+          path: streak.svg
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Generate Top Languages
         uses: stats-organization/github-readme-stats-action@main
         with:
-          username: JuanRRaFdez
-          template: top-langs
-          output_path: top-langs.svg
+          card: top-langs
+          path: top-langs.svg
+          token: ${{ secrets.GITHUB_TOKEN }}
