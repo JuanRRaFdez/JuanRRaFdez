@@ -11,20 +11,20 @@ jobs:
 
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Generate Stats
         uses: stats-organization/github-readme-stats-action@main
         with:
           card: stats
-          path: stats.svg
+          path: ./stats.svg
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Generate Top Languages
         uses: stats-organization/github-readme-stats-action@main
         with:
           card: top-langs
-          path: top-langs.svg
+          path: ./top-langs.svg
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Commit generated files
