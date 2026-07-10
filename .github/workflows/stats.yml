@@ -10,6 +10,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
       - name: Generate Stats
         uses: stats-organization/github-readme-stats-action@main
         with:
@@ -23,3 +26,11 @@ jobs:
           card: top-langs
           path: top-langs.svg
           token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Commit generated files
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git add stats.svg top-langs.svg
+          git commit -m "Update stats images" || echo "No changes to commit"
+          git push
