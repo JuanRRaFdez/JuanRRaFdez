@@ -17,13 +17,6 @@ jobs:
           path: stats.svg
           token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Generate Streak
-        uses: stats-organization/github-readme-stats-action@main
-        with:
-          card: streak
-          path: streak.svg
-          token: ${{ secrets.GITHUB_TOKEN }}
-
       - name: Generate Top Languages
         uses: stats-organization/github-readme-stats-action@main
         with:
